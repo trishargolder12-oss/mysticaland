@@ -55,7 +55,7 @@ namespace Mysticaland::Branding
     {
         g.setColour(colour);
         // Serif font for wordmark as mandated by design philosophy
-        g.setFont(juce::Font(juce::FontOptions(juce::Font::getDefaultSerifTypeName(), fontSize, juce::Font::plain)));
+        g.setFont(juce::Font(juce::FontOptions(juce::Font::getDefaultSerifFontName(), fontSize, juce::Font::plain)));
         
         // Spaced wordmark: "M Y S T I C A L A N D"
         g.drawText("M Y S T I C A L A N D", bounds, juce::Justification::centred, true);

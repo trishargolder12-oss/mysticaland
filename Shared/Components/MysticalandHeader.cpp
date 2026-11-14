@@ -34,7 +34,7 @@ namespace Mysticaland::UI
         // Version indicator (Right side)
         auto versionBounds = juce::Rectangle<float>(bounds.getRight() - 100.0f, 0.0f, 80.0f, (float)getHeight());
         g.setColour(Theme::MutedText);
-        g.setFont(juce::Font(juce::FontOptions(juce::Font::getDefaultSansSerifTypeName(), 11.0f, juce::Font::plain)));
+        g.setFont(juce::Font(juce::FontOptions(juce::Font::getDefaultSansSerifFontName(), 11.0f, juce::Font::plain)));
         g.drawText("v0.1.0", versionBounds, juce::Justification::centredRight, true);
     }
 

@@ -41,7 +41,7 @@ namespace Mysticaland::UI
         // Draw Label
         auto textColour = getToggleState() ? Theme::PrimaryText : (shouldDrawButtonAsHighlighted ? Theme::PrimaryText : Theme::SecondaryText);
         g.setColour(textColour);
-        g.setFont(juce::Font(juce::FontOptions(juce::Font::getDefaultSansSerifTypeName(), 15.0f, juce::Font::plain)));
+        g.setFont(juce::Font(juce::FontOptions(juce::Font::getDefaultSansSerifFontName(), 15.0f, juce::Font::plain)));
         
         auto textBounds = bounds.removeFromLeft(bounds.getWidth() - 30.0f);
         g.drawText(getButtonText(), textBounds, juce::Justification::centredLeft, true);
@@ -49,7 +49,7 @@ namespace Mysticaland::UI
         // Draw Chevron '>'
         auto chevronBounds = bounds;
         g.setColour(getToggleState() ? Theme::ChampagneGold : Theme::MutedText);
-        g.setFont(juce::Font(juce::FontOptions(juce::Font::getDefaultSansSerifTypeName(), 14.0f, juce::Font::plain)));
+        g.setFont(juce::Font(juce::FontOptions(juce::Font::getDefaultSansSerifFontName(), 14.0f, juce::Font::plain)));
         g.drawText(">", chevronBounds, juce::Justification::centred, true);
     }
 

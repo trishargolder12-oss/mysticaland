@@ -54,6 +54,6 @@ namespace Mysticaland::Theme
 
     juce::Font MysticalandLookAndFeel::getTextButtonFont(juce::TextButton&, int buttonHeight)
     {
-        return juce::Font(juce::FontOptions(juce::Font::getDefaultSansSerifTypeName(), (float)buttonHeight * 0.42f, juce::Font::plain));
+        return juce::Font(juce::FontOptions(juce::Font::getDefaultSansSerifFontName(), (float)buttonHeight * 0.42f, juce::Font::plain));
     }
 }

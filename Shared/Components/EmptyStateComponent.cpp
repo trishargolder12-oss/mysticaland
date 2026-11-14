@@ -37,7 +37,7 @@ namespace Mysticaland::UI
         // 3. Understated Instructional Copy (Two Lines)
         float textY = wordmarkY + 50.0f;
         g.setColour(Theme::SecondaryText);
-        g.setFont(juce::Font(juce::FontOptions(juce::Font::getDefaultSansSerifTypeName(), 13.0f, juce::Font::plain)));
+        g.setFont(juce::Font(juce::FontOptions(juce::Font::getDefaultSansSerifFontName(), 13.0f, juce::Font::plain)));
 
         juce::String line1 = "SELECT AN " + currentCategoryName + " OR INSTRUMENT";
         juce::String line2 = "FROM THE LEFT PANEL";

@@ -1,6 +1,6 @@
 #pragma once
 #include <juce_audio_processors/juce_audio_processors.h>
-#include "MysticalandShellAudioProcessor.h"
+#include "../Processor/MysticalandShellAudioProcessor.h"
 #include <Theme/MysticalandLookAndFeel.h>
 #include <Theme/MysticalandColors.h>
 #include <Components/MysticalandHeader.h>

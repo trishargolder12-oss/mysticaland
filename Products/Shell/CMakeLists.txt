@@ -28,6 +28,10 @@ target_include_directories(MysticalandShell PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
+target_compile_definitions(MysticalandShell PRIVATE
+    JUCE_VST3_CAN_REPLACE_VST2=0
+)
+
 target_link_libraries(MysticalandShell PRIVATE
     mysticaland_shared
     juce::juce_audio_utils
