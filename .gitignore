@@ -1,15 +1,28 @@
-node_modules/
-dist/
-.env
-.env.local
-.env*.local
-*.log
+# Build directories
+build/
+bin/
+out/
+.vs/
+*.user
+*.suo
+
+# C++ Object files & binaries
+*.obj
+*.o
+*.lib
+*.a
+*.exp
+*.ilk
+*.pdb
+*.vst3/
+*.exe
+*.dll
+
+# JUCE generated / intermediate
+_deps/
+CMakeUserPresets.json
+compile_commands.json
+
+# OS files
 .DS_Store
 Thumbs.db
-.vite/
-coverage/
-*.vsix
-*.vst3
-*.component
-build/
-out/
