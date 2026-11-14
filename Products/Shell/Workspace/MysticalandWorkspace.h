@@ -18,8 +18,6 @@ namespace Mysticaland::Shell
         void resized() override;
 
         void setMode(Mode newMode);
-
-        // Future extension point for mounting independent plugin UIs
         void mountPluginEditor(std::unique_ptr<juce::Component> pluginUI);
         void clearMountedPlugin();
 

@@ -4,12 +4,25 @@
 
 namespace Mysticaland::Branding
 {
-    // Draws the celestial arc with star & stylized M emblem
+    // High-resolution image assets manager
+    class AssetManager
+    {
+    public:
+        static AssetManager& getInstance();
+
+        juce::Image getBackgroundImage();
+        juce::Image getEmblemImage();
+        juce::Image getEmblemFullImage();
+
+    private:
+        AssetManager();
+        juce::Image backgroundImage;
+        juce::Image emblemImage;
+        juce::Image emblemFullImage;
+    };
+
+    // Drawing functions
     void drawEmblem(juce::Graphics& g, juce::Rectangle<float> bounds, juce::Colour colour = Theme::ChampagneGold);
-
-    // Draws the spaced serif wordmark "M Y S T I C A L A N D"
     void drawWordmark(juce::Graphics& g, juce::Rectangle<float> bounds, float fontSize = 16.0f, juce::Colour colour = Theme::PrimaryText);
-
-    // Draws subtle marble / dark slate background veining texture
     void drawSubtleMarbleTexture(juce::Graphics& g, juce::Rectangle<float> bounds);
 }

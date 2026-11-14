@@ -54,11 +54,11 @@ namespace Mysticaland::Shell
     {
         auto bounds = getLocalBounds().toFloat();
 
-        // 1. Workspace Background
+        // 1. Fill base dark tone
         g.setColour(Theme::WorkspaceBackground);
         g.fillRect(bounds);
 
-        // 2. Subtle Dark Stone / Marble Veining
+        // 2. High-res obsidian marble texture with champagne-gold veining
         Branding::drawSubtleMarbleTexture(g, bounds);
 
         // 3. Inner border framing

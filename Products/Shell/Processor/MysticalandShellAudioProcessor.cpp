@@ -25,7 +25,6 @@ void MysticalandShellAudioProcessor::changeProgramName(int, const juce::String&)
 
 void MysticalandShellAudioProcessor::prepareToPlay(double /*sampleRate*/, int /*samplesPerBlock*/)
 {
-    // Real-time audio engine initialization. Pass-through requires no state allocation.
 }
 
 void MysticalandShellAudioProcessor::releaseResources()
@@ -34,7 +33,6 @@ void MysticalandShellAudioProcessor::releaseResources()
 
 bool MysticalandShellAudioProcessor::isBusesLayoutSupported(const BusesLayout& layouts) const
 {
-    // Support stereo-in / stereo-out and mono-in / mono-out
     if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono()
         && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo())
         return false;
@@ -51,13 +49,10 @@ void MysticalandShellAudioProcessor::processBlock(juce::AudioBuffer<float>& buff
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
-    // Clear any extra output channels that have no corresponding inputs
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear(i, 0, buffer.getNumSamples());
 
-    // TRANSPARENT PASS-THROUGH
-    // Audio signal is left strictly unmodified.
-    // Zero allocations, zero latency, zero blocking operations.
+    // Strict transparent pass-through
 }
 
 bool MysticalandShellAudioProcessor::hasEditor() const { return true; }
@@ -69,7 +64,6 @@ juce::AudioProcessorEditor* MysticalandShellAudioProcessor::createEditor()
 
 void MysticalandShellAudioProcessor::getStateInformation(juce::MemoryBlock& destData)
 {
-    // Versioned state serialization
     juce::ValueTree state("MysticalandShellState");
     state.setProperty("version", "0.1.0", nullptr);
     state.setProperty("pluginCode", "Mshl", nullptr);
@@ -84,11 +78,9 @@ void MysticalandShellAudioProcessor::setStateInformation(const void* data, int s
     if (xmlState != nullptr && xmlState->hasTagName("MysticalandShellState"))
     {
         auto state = juce::ValueTree::fromXml(*xmlState);
-        // Validated versioned state loaded cleanly
     }
 }
 
-// JUCE Plugin Instantiation Factory
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
     return new MysticalandShellAudioProcessor();
